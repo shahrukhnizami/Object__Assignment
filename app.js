@@ -15,21 +15,31 @@ var object = {
     document.getElementById("categ").innerText=object.category
     document.getElementById("rate").innerText=object.rating[4]
 
-    
-// var employee = {
-//     id: 101,
-//     name: "John Doe",
-//     position: "Software Engineer",
-//     department: "IT",
-//     daysOff: ["Monday", "Friday"]
-
-//     };
-
-//     var day = new Date()
-//     var  weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-
-   
-//        this.daysOff.includes(day) = document.getElementById("day").innerText'
+    var employee1 = {
+        id: 101,
+        name: "John Doe",
+        position: "Software Engineer",
+        department: "IT",
+        daysOff: ["Monday", "Friday"],
+    }
+      
+        // Method to check if today is a day off
+        employee1.isTodayOff= function() {
+          // Get today's day of the week as a string
+          var daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+          var today = new Date();
+          var todayName = daysOfWeek[today.getDay()];
+          console.log(todayName)
+      
+          // Check if todayName is in the daysOff array
+          return this.daysOff.includes(todayName);
+          
+        }
+      
+      
+      // Example usage:
+      console.log(employee1.isTodayOff(),"Off Day");
+      
 
 
 var employee = {
